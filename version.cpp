@@ -2,6 +2,6 @@
 using namespace std;
 int main()
 {
-    cout << __cplusplus;
+    cout << __cplusplus << endl;
     return 0;
 }
