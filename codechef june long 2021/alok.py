@@ -1,11 +1,10 @@
-from random import randint
+def isDivisibleBy41(d1, d2, c, L):
+    digits = [d1, d2]
+    for i in range(3, L+1):
+        digits.append((digits[i-2]*c + digits[i-3]) % 10)
+    num = int("".join(map(str, digits)))
+    return num % 41 == 0
 
-t = randint(1, 1e5 + 1)
-print(t)
-while t:
-    t -= 1
-    d = randint(1, 1e6 + 1)
-    D = randint(d, 1e6 + 1)
-    P = randint(1, 1e6 + 1)
-    Q = randint(1, 1e6 + 1)
-    print(D, d, P, Q)
+
+d1, d2, c, L = map(int, input().split())
+print(isDivisibleBy41(d1, d2, c, L))
